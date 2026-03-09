@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Home from "./pages/home/Home";
 import MovieDetails from "./pages/MovieDetails/MovieDetails";
-import Search from "./pages/search/Search";
+
 import Favorites from "./pages/favorites/Favorites";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -11,6 +11,7 @@ import Login from "./pages/Auth/Login";
 import Register from "./pages/Auth/Register";
 import ProtectedRoute from "./components/ProtectedRoutes";
 import AdminDashboard from "./pages/admin/AdminDashboard";
+import Search from "./pages/Search/Search";
 
 function App() {
   return (
@@ -23,7 +24,7 @@ function App() {
         <Route path="/search" element={<Search />} />
         <Route path="/favorites" element={<Favorites />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register/>} />
+        <Route path="/register" element={<Register />} />
         <Route
           path="/favorites"
           element={
@@ -32,7 +33,7 @@ function App() {
             </ProtectedRoute>
           }
         />
-        <Route path="/admin" element = {<AdminDashboard/>}/>
+        <Route path="/admin" element={<AdminDashboard />} />
       </Routes>
     </BrowserRouter>
   );
