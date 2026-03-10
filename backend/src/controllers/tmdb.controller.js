@@ -3,7 +3,7 @@ const fetchFromTMDB = require("../services/tmdbServices");
 //r/trending/movie/day
 const getTrendingMovies = async (req, res) => {
   try {
-    const data = await fetchFromTMDB("/trending/movie/day");
+    const data = await fetchFromTMDB("/trending/all/day");
     res.json(data);
   } catch (error) {
     res.status(500).json({ message: "Failed to fetch trending movies" });
