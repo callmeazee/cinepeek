@@ -56,6 +56,12 @@ function Navbar() {
       <div className={`nav-links ${menuOpen ? "show" : ""}`}>
         <Link to="/">Home</Link>
 
+        {user && user.role === "admin" && (
+          <Link to="/admin" className="admin-link">
+            Admin Dashboard
+          </Link>
+        )}
+
         {user && <Link to="/favorites">Favorites</Link>}
 
         {!user ? (

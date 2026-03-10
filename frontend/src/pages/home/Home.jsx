@@ -10,7 +10,7 @@ function Home() {
 
            <MovieSection title="Popular Movies" endpoint="/tmdb/popular" />
 
-           <MovieSection title="Movies" endpoint="/tmdb/movies" />
+           <MovieSection title="Top Rated Movies" endpoint="/tmdb/movies" />
 
            <MovieSection title="TV Shows" endpoint="/tmdb/tv" />
 
