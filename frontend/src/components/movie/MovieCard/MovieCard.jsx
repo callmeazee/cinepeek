@@ -13,8 +13,9 @@ function MovieCard({ movie }) {
     <div className="movie-card">
       <Link
         to={
-          movie.media_type === "person"
-            ? `/person/${movie.id}`
+          // movie.media_type === "person"
+          movie.profile_path
+            ? "#"
             : `/movie/${movie.id}`
         }>
         <img src={image} alt={title} />

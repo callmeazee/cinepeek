@@ -28,9 +28,9 @@ const getPopularMovies = async (req, res) => {
 ///discover/movie
 
 const getMovies = async (req, res) => {
-     try {
-       const page = req.query.page || 1
-    const data = await fetchFromTMDB(`/discover/movie?page=${page}`);
+  try {
+    const page = req.query.page || 1;
+    const data = await fetchFromTMDB(`/movie/top_rated?page=${page}`);
     res.json(data);
   } catch (error) {
     res.status(500).json({ message: "Failed to fetch movies" });
@@ -39,6 +39,7 @@ const getMovies = async (req, res) => {
 
 // /discover/tv
 const getTvShows = async (req, res) => {
+    const page = req.query.page || 1;
   try {
     const data = await fetchFromTMDB(`/discover/tv?page=${page}`);
 
@@ -116,4 +117,14 @@ const getMovieVideos = async (req, res) => {
   }
 };
 
-module.exports = {getTrendingMovies, getPopularMovies, getMovies, getMovieDetails,getTvShows, searchMulti, getPopularPeople, getMovieImages, getMovieVideos}
+module.exports = {
+  getTrendingMovies,
+  getPopularMovies,
+  getMovies,
+  getMovieDetails,
+  getTvShows,
+  searchMulti,
+  getPopularPeople,
+  getMovieImages,
+  getMovieVideos,
+};

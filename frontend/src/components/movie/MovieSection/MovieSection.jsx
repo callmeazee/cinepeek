@@ -11,7 +11,7 @@ function MovieSection({ title, endpoint }) {
   useEffect(() => {
     const fetchMovies = async () => {
       try {
-        const res = await api.get(endpoint);
+        const res = await api.get(`${endpoint}?page=1`);
 
         setMovies(res.data.results);
       } catch (error) {
